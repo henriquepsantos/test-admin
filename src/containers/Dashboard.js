@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader } from "@material-ui/core";
 
 export default () => (
   <Card>
-    <CardHeader title="Welcome to the administration" />
-    <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+    <CardHeader title="Seja bem-vindo!" />
+    <CardContent>
+      Nessa aplicação você pode gerenciar dados de funcionários da empresa.
+    </CardContent>
   </Card>
 );

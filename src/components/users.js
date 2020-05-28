@@ -14,7 +14,7 @@ import {
 } from "react-admin";
 
 export const UserList = (props) => (
-  <List filters={<UserFilter />} {...props}>
+  <List title={"Funcionários"} filters={<UserFilter />} {...props}>
     <Datagrid>
       <TextField source="id" />
       <TextField source="name" />
@@ -54,6 +54,6 @@ export const UserCreate = (props) => (
 );
 const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="q" alwaysOn />
+    <TextInput label="Procurar" source="q" alwaysOn />
   </Filter>
 );
