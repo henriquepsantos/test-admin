@@ -12,6 +12,8 @@ import { AlbumsList } from "./components/albums";
 import { PhotosList, PhotoCreate } from "./components/photos";
 import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
 import PhotoIcon from "@material-ui/icons/Photo";
+import { TodosList, TodosEdit, TodosCreate } from "./components/todos";
+import WorkIcon from "@material-ui/icons/Work";
 
 const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 const App = () => (
@@ -26,6 +28,13 @@ const App = () => (
       edit={UserEdit}
       create={UserCreate}
       icon={UserIcon}
+    />
+    <Resource
+      name="todos"
+      list={TodosList}
+      edit={TodosEdit}
+      create={TodosCreate}
+      icon={WorkIcon}
     />
   </Admin>
 );
