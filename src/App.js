@@ -8,6 +8,10 @@ import PostIcon from "@material-ui/icons/Book";
 import UserIcon from "@material-ui/icons/Group";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
+import { AlbumsList } from "./albums";
+import { PhotosList, PhotoCreate } from "./photos";
+import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
+import PhotoIcon from "@material-ui/icons/Photo";
 
 const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 const App = () => (
@@ -24,6 +28,13 @@ const App = () => (
       icon={PostIcon}
     />
     <Resource name="users" list={UserList} icon={UserIcon} />
+    <Resource name="albums" list={AlbumsList} icon={PhotoAlbumIcon} />
+    <Resource
+      name="photos"
+      list={PhotosList}
+      icon={PhotoIcon}
+      create={PhotoCreate}
+    />
   </Admin>
 );
 
