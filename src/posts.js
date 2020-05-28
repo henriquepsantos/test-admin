@@ -70,7 +70,7 @@ const PostTitle = ({ record }) => {
 };
 const PostFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="q" alwaysOn />
+    <TextInput label="Search" source="t" alwaysOn />
     <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
       <SelectInput optionText="name" />
     </ReferenceInput>
