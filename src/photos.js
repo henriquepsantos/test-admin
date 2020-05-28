@@ -4,18 +4,18 @@ import {
   List,
   Datagrid,
   TextField,
-  EmailField,
   ReferenceField,
   TextInput,
   SimpleForm,
   ReferenceInput,
   SelectInput,
   Create,
+  Filter,
 } from "react-admin";
 import MyUrlField from "./MyUrlField";
 
 export const PhotosList = (props) => (
-  <List {...props}>
+  <List filters={<PhotoFilter />} {...props}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <ReferenceField label="Album" source="albumId" reference="albums">
@@ -37,4 +37,17 @@ export const PhotoCreate = (props) => (
       <TextInput source="url" />
     </SimpleForm>
   </Create>
+);
+const PhotoFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="t" alwaysOn />
+    <ReferenceInput
+      label="Album"
+      source="albumId"
+      reference="albums"
+      allowEmpty
+    >
+      <SelectInput optionText="title" />
+    </ReferenceInput>
+  </Filter>
 );

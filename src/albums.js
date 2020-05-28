@@ -3,18 +3,29 @@ import {
   List,
   Datagrid,
   TextField,
-  EmailField,
   ReferenceField,
+  Filter,
+  TextInput,
+  ReferenceInput,
+  SelectInput,
 } from "react-admin";
 
 export const AlbumsList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
+      <TextField source="id" />
       <ReferenceField label="User" source="userId" reference="users">
         <TextField source="name" />
       </ReferenceField>
-      <TextField source="id" />
-      <TextField source="title" />
+      <TextField label="Album" source="title" />
     </Datagrid>
   </List>
+);
+const AlbumFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="t" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
+      <SelectInput optionText="name" />
+    </ReferenceInput>
+  </Filter>
 );
